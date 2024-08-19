@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jay Tours</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <!-- Internal CSS Styles -->
+    <style>
+        :root {
+            --main-color: #f15715;
+            --secondary-color: #fff;
+            --bg-color-01: #000;
+            --bg-color-02: #002333;
+            --card-title-color: #4f82e7;
+            --card-subtitle-color: #848382;
+            --btn-bg-color: #00bdef;
+        }
+
+        .bad-script-regular {
+            font-family: "Bad Script", cursive;
+            font-size: 3rem;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+
+        .main-color {
+            color: var(--main-color);
+        }
+
+        .secondary-color {
+            color: var(--secondary-color);
+        }
+
+        .bg-color-01 {
+            background-color: var(--bg-color-01);
+        }
+
+        .bg-color-02 {
+            background-color: var(--bg-color-02);
+        }
+
+        .navbar {
+            padding: 0;
+        }
+
+        .brand-name {
+            font-size: 30px;
+            font-weight: 600;
+            color: var(--main-color);
+            padding: 0;
+        }
+
+        .brand-name:hover,
+        .brand-name:focus {
+            color: var(--main-color);
+        }
+
+        .navbar-items a {
+            color: var(--secondary-color);
+        }
+
+        .navbar-items a:hover,
+        .navbar-items a:focus {
+            color: var(--main-color);
+        }
+
+        .main-img-container {
+            background-image: url('./Images/main.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .img-title {
+            height: auto;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--card-title-color);
+        }
+
+        .card-subtitle {
+            font-weight: 500;
+            color: var(--card-subtitle-color);
+        }
+
+        .card-text {
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        .my-card {
+            height: 100%;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            border-bottom: 5px solid var(--card-title-color);
+        }
+
+        .click-more {
+            color: var(--card-title-color);
+            opacity: 0.7;
+        }
+
+        .custom-fs-1 {
+            font-size: calc(1.5rem + 3vw);
+        }
+
+        .custom-fs-2 {
+            font-size: calc(1rem + 2.3vw);
+        }
+
+        .btn-primary {
+            background-color: var(--btn-bg-color);
+            border-color: var(--btn-bg-color);
+        }
+
+        .phone-icon,
+        .location-mark {
+            font-size: 1.2rem;
+        }
+
+        .phone-no,
+        .address {
+            font-size: 0.8rem;
+        }
+
+        .list-title {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            font-size: 0.7rem;
+            font-weight: 200;
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 575.98px) {
+            .main-img-container {
+                height: 135px;
+            }
+        }
+
+        @media (min-width: 576px) and (max-width: 767.98px) {
+            .main-img-container {
+                height: 220px;
+            }
+
+            .custom-fs-1 {
+                font-size: calc(1.5rem + 2vw);
+            }
+
+            .custom-fs-2 {
+                font-size: calc(1rem + 1.8vw);
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            .main-img-container {
+                height: 295px;
+            }
+
+            .custom-fs-1 {
+                font-size: calc(1.5rem + 1.9vw);
+            }
+
+            .custom-fs-2 {
+                font-size: calc(1rem + 1.6vw);
+            }
+
+            .copyright {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (min-width: 992px) and (max-width: 1199.98px) {
+            .main-img-container {
+                height: 375px;
+            }
+
+            .custom-fs-1 {
+                font-size: calc(1.5rem + 1.7vw);
+            }
+
+            .custom-fs-2 {
+                font-size: calc(1rem + 1.3vw)
+            }
+        }
+
+        @media (min-width: 1200px) and (max-width: 1399.98px) {
+            .main-img-container {
+                height: 455px;
+            }
+
+            .custom-fs-1 {
+                font-size: calc(1.5rem + 1.5vw);
+            }
+
+            .custom-fs-2 {
+                font-size: calc(1rem + 1.15vw);
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .main-img-container {
+                height: 950px;
+            }
+
+            .custom-fs-1 {
+                font-size: 3.5rem;
+            }
+
+            .custom-fs-2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+
+    <!-- Navbar -->
+    <header class="container-fluid bg-color-01">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <div class="container-fluid">
+                            <a class="navbar-brand brand-name" href="#">JAY TOURS</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                    <li class="nav-item navbar-items">
+                                        <a class="nav-link" aria-current="page" href="#">HOME</a>
+                                    </li>
+                                    <li class="nav-item navbar-items">
+                                        <a class="nav-link" href="#">ABOUT</a>
+                                    </li>
+                                    <li class="nav-item navbar-items">
+                                        <a class="nav-link" href="#">SERVICES</a>
+                                    </li>
+                                    <li class="nav-item navbar-items">
+                                        <a class="nav-link" href="#">TESTIMONIALS</a>
+                                    </li>
+                                    <li class="nav-item navbar-items">
+                                        <a class="nav-link" href="#">PORTFOLIO</a>
+                                    </li>
+                                    <li class="nav-item navbar-items">
+                                        <a class="nav-link" href="#">CONTACTS</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--  Hero image  -->
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 main-img-container">
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Destinations Part -->
+    <section class="container mt-5">
+        <div class="row">
+            <div class="col d-flex justify-content-center mb-2">
+                <h1 class="custom-fs-1 main-color text-center">TOP DESTINATIONS</h1>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-3 row-cols-xl-5 justify-content-center">
+            <div class="d-flex flex-column justify-content-center mb-4 mb-xl-0">
+                <div class="img-title d-flex justify-content-center">
+                    <h2 class="custom-fs-2" style="color: var(--card-subtitle-color);">SRI LANKA</h2>
+                </div>
+                <div class="col">
+                    <img src="./Images/Top Destinations/Sri Lanka.jpg" alt="Sri Lanka" class="img-fluid h-100">
+                </div>
+            </div>
+            <div class="d-flex flex-column justify-content-center mb-4 mb-xl-0">
+                <div class="img-title d-flex justify-content-center">
+                    <h2 class="custom-fs-2" style="color: var(--card-subtitle-color);">ROME</h2>
+                </div>
+                <div class="col">
+                    <img src="./Images/Top Destinations/Rome.jpg" alt="Rome" class="img-fluid h-100">
+                </div>
+            </div>
+            <div class="d-flex flex-column justify-content-center mb-4 mb-xl-0">
+                <div class="img-title d-flex justify-content-center">
+                    <h2 class="custom-fs-2" style="color: var(--card-subtitle-color);">MALDIVES</h2>
+                </div>
+                <div class="col">
+                    <img src="./Images/Top Destinations/Maldives.jpg" alt="Maldives" class="img-fluid h-100">
+                </div>
+            </div>
+            <div class="d-flex flex-column justify-content-center mb-4 mb-md-0 mb-sm-4">
+                <div class="img-title d-flex justify-content-center">
+                    <h2 class="custom-fs-2" style="color: var(--card-subtitle-color);">SWITZERLAND</h2>
+                </div>
+                <div class="col">
+                    <img src="./Images/Top Destinations/Switzerland.jpg" alt="Switzerland" class="img-fluid h-100">
+                </div>
+            </div>
+            <div class="d-flex flex-column justify-content-center">
+                <div class="img-title d-flex justify-content-center">
+                    <h2 class="custom-fs-2" style="color: var(--card-subtitle-color);">THAILAND</h2>
+                </div>
+                <div class="col">
+                    <img src="./Images/Top Destinations/Thailand.jpg" alt="Thailand" class="img-fluid h-100">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Leaders -->
+    <section class="container mt-5">
+        <div class="row">
+            <div class="col d-flex justify-content-center mb-2">
+                <h1 class="custom-fs-1 main-color text-center">OUR TEAM LEADS</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center px-md-3 mb-2">
+                <p class="lead fw-semibold">Teamwork is the ability to work together toward a common vision. The ability
+                    to direct individual
+                    accomplishments toward organizational objectives. It is the fuel that allows common people to attain
+                    uncommon results.</p>
+            </div>
+        </div>
+        <div class="row row-cols-md-3">
+            <div class="d-flex flex-column mb-3 mb-md-0">
+                <div class="col mx-auto">
+                    <img src="./Images/Team Leaders/Hugo Silva.jpg" alt="Hugo Silva" class="img-fluid">
+                </div>
+                <div class="img-title d-flex justify-content-center">
+                    <h1 class="custom-fs-2">Hugo Silva</h1>
+                </div>
+            </div>
+            <div class="d-flex flex-column mb-3 mb-md-0">
+                <div class="col mx-auto">
+                    <img src="./Images/Team Leaders/Imanoli Arias.jpg" alt="Imanoli Arias" class="img-fluid">
+                </div>
+                <div class="img-title d-flex justify-content-center">
+                    <h1 class="custom-fs-2">Imanoli Arias</h1>
+                </div>
+            </div>
+            <div class="d-flex flex-column mb-3 mb-md-0">
+                <div class="col mx-auto">
+                    <img src="./Images/Team Leaders/Javier Bardem.jpg" alt="Javier Bardem" class="img-fluid">
+                </div>
+                <div class="img-title d-flex justify-content-center">
+                    <h1 class="custom-fs-2">Javier Bardem</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Middle Part -->
+    <section class="container-fluid bg-color-02 mt-5">
+        <div class="container">
+            <div class="row row-cols-2 row-cols-md-4">
+                <div class="col py-3 py-md-5">
+                    <h3 class="bad-script-regular main-color text-center my-4">250k +</h3>
+                    <h4 class="secondary-color fs-5 fw-normal text-center my-3">HAPPY CLIENTS</h4>
+                </div>
+                <div class="col py-3 py-md-5">
+                    <h3 class="bad-script-regular main-color text-center my-4 ">800</h3>
+                    <h4 class="secondary-color fs-5 fw-normal text-center my-3">WEEKLY RESERVATIONS</h4>
+                </div>
+                <div class="col py-3 py-md-5">
+                    <h3 class="bad-script-regular main-color text-center my-4">150</h3>
+                    <h4 class="secondary-color fs-5 fw-normal text-center my-3">TRAVEL PARTNERS</h4>
+                </div>
+                <div class="col py-3 py-md-5">
+                    <h3 class="bad-script-regular main-color text-center my-4">15</h3>
+                    <h4 class="secondary-color fs-5 fw-normal text-center my-3">BRANCHES</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travelers Notes -->
+    <section class="container mt-5">
+        <div class="row">
+            <div class="col d-flex justify-content-center mb-2">
+                <h1 class="custom-fs-1 main-color text-center">OVERHEAD FROM TRAVELERS</h1>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 justify-content-around">
+            <div class="col mb-2 mb-md-0">
+                <div class="card my-card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Hotel Eucalyptus</h5>
+                        <h6 class="card-subtitle mb-2 text-center">in Greece</h6>
+                        <p class="card-text text-center mt-3">"We booked Hotel Eucalyptus through Jay after reading a
+                            handful of reviews, and it was easily the best decision we made<br /><span
+                                class="click-more">...more</span>"</p>
+                        <footer class="blockquote-footer text-center mt-3">Joyce from Canada</footer>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-2 mb-md-0">
+                <div class="card my-card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Holiday Inn Resort Batam</h5>
+                        <h6 class="card-subtitle mb-2 text-center">in Indonesia</h6>
+                        <p class="card-text text-center mt-3">"Thanks Jay for letting me change room without charge and
+                            rebate the difference. Nice staffs Agoda and Holiday Inn!"</p><br />
+                        <footer class="blockquote-footer text-center mt-2">Andy from Singapore</footer>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-2 mb-md-0">
+                <div class="card my-card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Hotel Granvia Kyoto</h5>
+                        <h6 class="card-subtitle mb-2 text-center">in Japan</h6>
+                        <p class="card-text text-center mt-3">"Our family was traveling via bullet train between cities
+                            in Japan with our luggage - the location for this hotel made that<br /><span
+                                class="click-more">...more</span>"</p>
+                        <footer class="blockquote-footer text-center mt-3">Diane from the United States</footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="container mt-5">
+        <div class="row">
+            <div class="col d-flex justify-content-center mb-2">
+                <h1 class="custom-fs-1 main-color text-center">CONTACT US</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form action="" onsubmit="return(validateForm())">
+                    <div class="row mb-4">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <input type="text" name="firstname" id="firstname" class="form-control"
+                                placeholder="First Name">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" name="lastname" id="lastname" class="form-control"
+                                placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <input type="email" name="email" id="email" class="form-control" placeholder="E-mail">
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <input type="tel" name="tel-no" id="tel-no" class="form-control" placeholder="Phone Number">
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col d-flex justify-content-center align-items-center">
+                            <input type="checkbox" name="newsletter" id="newsletter" class="form-check-input me-2">
+                            <label class="form-check-label fs-5" for="flexCheckDefault">Subscribe to our
+                                newsletter</label>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col d-flex justify-content-center">
+                            <input type="submit" value="SIGN IN" class="btn btn-lg btn-primary px-5">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sub Footer -->
+    <section class="container-fluid bg-color-02 mt-5">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div
+                        class="row row-cols-1 row-cols-md-3 row-cols-lg-3 row-cols-xl-5 justify-content-center justify-content-md-start">
+                        <div class="col-md-auto col-xl-2 mb-3 mb-xl-0">
+                            <ul>
+                                <h4 class="list-title mb-md-4">HELP</h4>
+                                <li class="list-unstyled"><a class="secondary-color text-decoration-none" href="#">Help Center</a></li>
+                                <li class="list-unstyled"><a class="secondary-color text-decoration-none" href="#">FAQs</a></li>
+                                <li class="list-unstyled"><a class="secondary-color text-decoration-none" href="#">Terms of Use</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-auto col-xl-2 mb-3 mb-xl-0">
+                            <ul>
+                                <h4 class="list-title mb-md-4">ABOUT US</h4>
+                                <li class="list-unstyled"><a class="secondary-color text-decoration-none" href="#">Blog</a></li>
+                                <li class="list-unstyled"><a class="secondary-color text-decoration-none" href="#">Careers</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-auto col-xl-2 mb-3 mb-xl-0">
+                            <ul>
+                                <h4 class="list-title mb-md-4">DESTINATIONS</h4>
+                                <li class="list-unstyled"><a class="secondary-color text-decoration-none" href="#">Countries</a></li>
+                                <li class="list-unstyled"><a class="secondary-color text-decoration-none" href="#">Cities</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-auto col-xl-3 mb-3 mb-md-0">
+                            <ul>
+                                <h4 class="list-title mb-md-4">PARTNER WITH US</h4>
+                                <li class="list-unstyled"><a class="secondary-color text-decoration-none" href="#">Properties</a></li>
+                                <li class="list-unstyled"><a class="secondary-color text-decoration-none" href="#">Affiliates</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-auto mb-0">
+                            <div class="row row-cols-2 justify-content-start mb-3 ps-4 ps-xl-5">
+                                <div class="col d-flex justify-content-center justify-content-sm-start">
+                                    <div
+                                        class="col-auto icon d-flex justify-content-center align-items-center px-0 me-2">
+                                        <i class="fa-solid fa-phone phone-icon main-color"></i>
+                                    </div>
+                                    <div class="col-auto ps-0">
+                                        <h6 class="phone-no mb-0 secondary-color fw-light">+94 112 875 965</h6>
+                                        <h6 class="phone-no mb-0 secondary-color fw-light">+94 115 879 568</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-cols-2 justify-content-start ps-4 ps-xl-5">
+                                <div class="col d-flex justify-content-center justify-content-sm-start">
+                                    <div
+                                        class="col-auto icon d-flex justify-content-center align-items-center px-0 me-3">
+                                        <i class="fa-solid fa-location-dot location-mark main-color"></i>
+                                    </div>
+                                    <div class="col-auto ps-0">
+                                        <h6 class="address mb-0 secondary-color fw-light">No. 056,</h6>
+                                        <h6 class="address mb-0 secondary-color fw-light">Havlock Town,</h6>
+                                        <h6 class="address mb-0 secondary-color fw-light">Colombo 05,</h6>
+                                        <h6 class="address mb-0 secondary-color fw-light">Sri Lanka</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer and Copyright Area -->
+    <footer class="container-fluid mt-0 bg-color-01">
+        <div class="row">
+            <div class="container">
+                <div class="col d-flex justify-content-center align-items-center my-3">
+                    <h4 class="copyright lead text-center mb-0"> Copyright<span> &copy; </span>2020 - SLIIT WEB DEVELOPMENT -
+                        All right
+                        reserved</h4>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        function validateForm() {
+
+            var fname = document.getElementById('firstname').value;
+            var lname = document.getElementById('lastname').value;
+            var email = document.getElementById('email').value;
+            var telno = document.getElementById('tel-no').value;
+            var telnoLength = telno.length;
+
+            if (fname === "") {
+                window.alert('Enter your first name...!');
+                return false;
+            }
+
+            if (lname === "") {
+                window.alert('Enter your last name...!');
+                return false;
+            }
+
+            if (email === "") {
+                window.alert('Enter your e-mail address...!');
+                return false;
+            }
+
+            if (telno === "") {
+                window.alert('Enter your phone number...!');
+                return false;
+            }
+
+            if (telnoLength != 10) {
+                window.alert('Enter a valid phone number...!');
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+    <!-- Bootstrap Js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"
+        integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>
